@@ -6,7 +6,7 @@ import Checkin from "../../components/CheckIn";
 
 import styles from "./styles";
 
-import useCheckins from "../../hook/useCheckins";
+import useCheckins from "../../hooks/useCheckins";
 import ComponentWrapper from "../../components/ComponentWrapper";
 
 const Checkins = ({ active = false }) => {

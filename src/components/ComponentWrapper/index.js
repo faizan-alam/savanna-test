@@ -13,7 +13,7 @@ const ComponentWrapper = ({
 }) => {
   return (
     <View style={styles.root}>
-      {loading && <ActivityIndicator />}
+      {loading && <ActivityIndicator size="large" />}
       {!loading && (error || empty) && <Text>{error || "No Data Found"}</Text>}
       {!loading && !error && !empty && children}
     </View>

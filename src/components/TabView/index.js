@@ -20,6 +20,7 @@ const TabView = ({ items = [] }) => {
             title={item.name}
             titleStyle={styles.tabTitle(index === i)}
             style={styles.tab}
+            buttonStyle={styles.tab}
           />
         ))}
       </Tab>
@@ -31,7 +32,7 @@ const TabView = ({ items = [] }) => {
             style={styles.tabView}
             onMoveShouldSetResponder={(e) => e.stopPropagation()}
           >
-            <item.Component />
+            <item.Component active={index === i} />
           </ElementTabView.Item>
         ))}
       </ElementTabView>

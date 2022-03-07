@@ -1,23 +1,17 @@
 import {
   ApolloClient,
   ApolloProvider as RNApolloProvider,
-  ApolloLink,
+  InMemoryCache,
 } from "@apollo/client";
-import { createHttpLink, errorLink, localCache } from "../config/apollo";
 
-const httpLink = createHttpLink();
+const cache = new InMemoryCache();
 
-const apolloClient = new ApolloClient({
-  link: ApolloLink.from([errorLink, httpLink]),
-  connectToDevTools: process.env.NODE_ENV !== "production",
-  cache: localCache,
-  assumeImmutableResults: true,
+const client = new ApolloClient({
+  uri: "https://profound-marmot-29.hasura.app/v1/graphql",
+  cache,
 });
-
 const ApolloProvider = (props) => {
-  return (
-    <RNApolloProvider client={apolloClient}>{props.childer}</RNApolloProvider>
-  );
+  return <RNApolloProvider client={client}>{props.children}</RNApolloProvider>;
 };
 
 export default ApolloProvider;

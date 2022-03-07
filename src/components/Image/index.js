@@ -5,7 +5,7 @@ import { ActivityIndicator } from "react-native";
 
 import { Image as ElementImage } from "react-native-elements";
 
-const Image = ({ source, containerStyle, ...rest }) => {
+const Image = ({ source, containerStyle = {}, ...rest }) => {
   return (
     <ElementImage
       PlaceholderContent={
@@ -22,7 +22,6 @@ const Image = ({ source, containerStyle, ...rest }) => {
 };
 
 Image.propTypes = {
-  containerStyle: PropTypes.string,
   source: PropTypes.object,
   ...ElementImage.prototype,
 };

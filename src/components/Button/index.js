@@ -26,8 +26,8 @@ const Button = ({
 };
 
 Button.propTypes = {
-  disabled: PropTypes.any,
-  loading: PropTypes.any,
+  disabled: PropTypes.bool,
+  loading: PropTypes.bool,
   onPress: PropTypes.func,
   style: PropTypes.object,
   title: PropTypes.string,

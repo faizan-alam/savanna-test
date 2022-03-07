@@ -24,7 +24,7 @@ const Checkin = ({ imageURL, title, createdAt, description }) => {
 Checkin.propTypes = {
   createdAt: PropTypes.string,
   description: PropTypes.string,
-  imageURL: PropTypes.string,
+  imageURL: PropTypes.any,
   title: PropTypes.string,
 };
 
